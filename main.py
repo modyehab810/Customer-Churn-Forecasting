@@ -488,87 +488,6 @@ prediction_layout = html.Div([
 
 # url = "http://128.0.0.1:8000/churn_prediction"
 
-# Deep Learning API
-url = "https://modyehab810-customer-churn-api.hf.space/churn_prediction"
-
-
-# Define callback for Prediction Page
-@app.callback(Output('output-div', 'children'),
-              Output('prediction-image', 'src'),
-
-              Input('submit-button', 'n_clicks'),
-
-              State('gender', 'value'),
-               State('is-senior', 'value'),
-               State('partner', 'value'),
-               State('dependents', 'value'),
-               State('tenure', 'value'),
-               State('phone-services', 'value'),
-               State('internet-services', 'value'),
-               State('contract', 'value'),
-               State('payment-method', 'value'),
-               State('monthly-charges', 'value'),
-               State('total-charges', 'value'),
-
-               )
-def update_output(n_clicks, gender, senior_citizen, partner, dependents, tenure, phone_services,
-                  internet_services, contract, payment_method_val, monthly_charges, total_charges):
-    if n_clicks > 0:
-        input_dict = {
-            'gender': [gender],
-            'SeniorCitizen': [senior_citizen],
-            'Partner': [partner],
-            'Dependents': [dependents],
-            'tenure': [tenure],
-            'PhoneService': [phone_services],
-            'InternetService': [internet_services],
-            'Contract': [contract],
-            'PaymentMethod': [payment_method_val],
-            'MonthlyCharges': [monthly_charges],
-            'TotalCharges': [total_charges]
-        }
-
-        input_dict = pd.DataFrame(input_dict)
-        input_dict = transformer.transform(input_dict)[0]
-
-        key_list = ["GenderMale",
-                    "InternetServiceFiberOptic",
-                    "InternetServiceNo",
-                    "ContractOneYear",
-                    "ContractTwoYear",
-                    "PaymentMethodCreditCard",
-                    "PaymentMethodElectronicCheck",
-                    "PaymentMethodMailedCheck",
-                    "SeniorCitizen",
-                    "Partner",
-                    "Dependents",
-                    "tenure",
-                    "PhoneService",
-                    "MonthlyCharges",
-                    "TotalCharges"]
-
-        model_dictionary = {}
-
-        for i in range(len(key_list)):
-            model_dictionary[key_list[i]] = input_dict[i]
-
-        json_input = json.dumps(model_dictionary)
-        response = requests.post(url, data=json_input)
-        
-        if response.status_code == 200:
-            image_src = "/assets/happy-face.png"
-
-            if response.text.__contains__("Leave"):
-                image_src = "/assets/sad.png"
-            return [response.text, image_src]
-
-        else:
-            return ["Sorry, Server is Crashed", "/assets/sad.png"]
-
-
-    else:
-        return [input_dict, '']
-
 
 app.layout = html.Div([
     dcc.Location(id="page-url"),
@@ -1032,6 +951,86 @@ def get_content_layout(pathname, contract_val, payment_method_val, churn_val, ta
             }
         ]
 
+# Deep Learning API
+url = "https://modyehab810-customer-churn-api.hf.space/churn_prediction"
+
+
+# Define callback for Prediction Page
+@app.callback(Output('output-div', 'children'),
+              Output('prediction-image', 'src'),
+
+              Input('submit-button', 'n_clicks'),
+
+              State('gender', 'value'),
+               State('is-senior', 'value'),
+               State('partner', 'value'),
+               State('dependents', 'value'),
+               State('tenure', 'value'),
+               State('phone-services', 'value'),
+               State('internet-services', 'value'),
+               State('contract', 'value'),
+               State('payment-method', 'value'),
+               State('monthly-charges', 'value'),
+               State('total-charges', 'value'),
+
+               )
+def update_output(n_clicks, gender, senior_citizen, partner, dependents, tenure, phone_services,
+                  internet_services, contract, payment_method_val, monthly_charges, total_charges):
+    if n_clicks > 0:
+        input_dict = {
+            'gender': [gender],
+            'SeniorCitizen': [senior_citizen],
+            'Partner': [partner],
+            'Dependents': [dependents],
+            'tenure': [tenure],
+            'PhoneService': [phone_services],
+            'InternetService': [internet_services],
+            'Contract': [contract],
+            'PaymentMethod': [payment_method_val],
+            'MonthlyCharges': [monthly_charges],
+            'TotalCharges': [total_charges]
+        }
+
+        input_dict = pd.DataFrame(input_dict)
+        input_dict = transformer.transform(input_dict)[0]
+
+        key_list = ["GenderMale",
+                    "InternetServiceFiberOptic",
+                    "InternetServiceNo",
+                    "ContractOneYear",
+                    "ContractTwoYear",
+                    "PaymentMethodCreditCard",
+                    "PaymentMethodElectronicCheck",
+                    "PaymentMethodMailedCheck",
+                    "SeniorCitizen",
+                    "Partner",
+                    "Dependents",
+                    "tenure",
+                    "PhoneService",
+                    "MonthlyCharges",
+                    "TotalCharges"]
+
+        model_dictionary = {}
+
+        for i in range(len(key_list)):
+            model_dictionary[key_list[i]] = input_dict[i]
+
+        json_input = json.dumps(model_dictionary)
+        response = requests.post(url, data=json_input)
+        
+        if response.status_code == 200:
+            image_src = "/assets/happy-face.png"
+
+            if response.text.__contains__("Leave"):
+                image_src = "/assets/sad.png"
+            return [response.text, image_src]
+
+        else:
+            return ["Sorry, Server is Crashed", "/assets/sad.png"]
+
+
+    else:
+        return [input_dict, '']
 
 # Run The App
 if __name__ == "__main__":
