@@ -496,9 +496,9 @@ url = "https://modyehab810-customer-churn-api.hf.space/churn_prediction"
 @app.callback(Output('output-div', 'children'),
               Output('prediction-image', 'src'),
 
-              [Input('submit-button', 'n_clicks')],
+              Input('submit-button', 'n_clicks'),
 
-              [State('gender', 'value'),
+              State('gender', 'value'),
                State('is-senior', 'value'),
                State('partner', 'value'),
                State('dependents', 'value'),
@@ -510,7 +510,7 @@ url = "https://modyehab810-customer-churn-api.hf.space/churn_prediction"
                State('monthly-charges', 'value'),
                State('total-charges', 'value'),
 
-               ])
+               )
 def update_output(n_clicks, gender, senior_citizen, partner, dependents, tenure, phone_services,
                   internet_services, contract, payment_method_val, monthly_charges, total_charges):
     if n_clicks > 0:
