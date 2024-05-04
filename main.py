@@ -492,7 +492,7 @@ prediction_layout = html.Div([
 url = "https://modyehab810-customer-churn-api.hf.space/churn_prediction"
 
 
-# Define callback for Page 2
+# Define callback for Prediction Page
 @app.callback(Output('output-div', 'children'),
               Output('prediction-image', 'src'),
 
@@ -554,6 +554,7 @@ def update_output(n_clicks, gender, senior_citizen, partner, dependents, tenure,
 
         json_input = json.dumps(model_dictionary)
         response = requests.post(url, data=json_input)
+        
         if response.status_code == 200:
             image_src = "/assets/happy-face.png"
 
@@ -566,7 +567,7 @@ def update_output(n_clicks, gender, senior_citizen, partner, dependents, tenure,
 
 
     else:
-        return ['', '']
+        return ['q', '']
 
 
 app.layout = html.Div([
