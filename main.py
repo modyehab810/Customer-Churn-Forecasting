@@ -567,7 +567,7 @@ def update_output(n_clicks, gender, senior_citizen, partner, dependents, tenure,
 
 
     else:
-        return ['q', '']
+        return [input_dict, '']
 
 
 app.layout = html.Div([
