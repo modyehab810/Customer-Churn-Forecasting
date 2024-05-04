@@ -1030,7 +1030,7 @@ def update_output(n_clicks, gender, senior_citizen, partner, dependents, tenure,
 
 
     else:
-        return [input_dict, '']
+        return [n_clicks, '']
 
 # Run The App
 if __name__ == "__main__":
