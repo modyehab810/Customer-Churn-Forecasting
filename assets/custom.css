@@ -1,0 +1,87 @@
+body {
+    background-color: #F8F8F8;
+    overflow-x: hidden;
+}
+#loading {
+    display: none !important;
+}
+
+body:has(#page-content[data-dash-is-loading="true"]) #loading {
+    display: flex !important;
+}
+.nav-pills .nav-link.active {
+    color: #fff;
+    background-color: #B06DF1;
+    font-weight: bold;
+}
+div.card:hover {
+    border-color: #889!important;
+    opacity: 1!important;
+    transition: all 0.45s ease-in-out;
+}
+#payment-method-filter .Select-menu-outer {
+    top: 0;
+     -webkit-transform: translateY(3px) translateY(-100%);
+     transform: translateY(3px) translateY(-100%);
+     border-top-right-radius: 4px;
+     border-top-left-radius: 4px;
+     border-bottom-right-radius: 0px;
+     border-bottom-left-radius: 0px;
+     border: 1px solid #ccc;
+     border-bottom: none;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background-color: #9376E0;
+
+	background-image: -webkit-gradient(linear, 0 0, 0 100%,
+	                   color-stop(.5, rgba(255, 255, 100, .2)),
+					   color-stop(.5, transparent), to(transparent));
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  transition: all 0.45s ease-in-out;
+  background-color: violet;
+}
+
+
+
+/* Forecasting Button Style  */
+#submit-button {
+    font: bold 25px arial;
+    color: #D67BFF;
+    padding: 20px 50px;
+    cursor: pointer;
+    border: 3px solid #D67BFF;
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    margin:auto;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#submit-button:hover,
+#submit-button:focus-visible{
+    transition: all 0.4s ease-in-out;
+    background-color: #D67BFF;
+    color: #fff
+
+
+}
+
