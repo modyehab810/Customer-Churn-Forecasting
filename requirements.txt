@@ -1,6 +1,7 @@
 dash==2.14.1
 plotly
 dash_bootstrap_components
+dash_loading_spinners
 gunicorn
 tensorflow==2.15.0
 scikit-learn==1.2.0
