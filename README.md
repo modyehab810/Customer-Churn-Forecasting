@@ -2,7 +2,7 @@
 
 ♠ Using a Deep Learning Model to Predict if the Customer Leave or Stay With The Company, From a Features like(Gender Has Partener, Is Senior Citizen, Has Dependents, Customer Tenure, Monthly Charges, etc)
 
-### Web App Link: <a href = "https://modyehab810-customer-churn-forecasting.hf.space" style = "color: tomato">Click Here To Visit Streamlit Web App</a>🥰📊
+### Web App Link: <a href = "https://modyehab810-customer-churn-forecasting.hf.space" style = "color: tomato">Click Here To Visit Plotly Dash Web App</a>🥰📊
 
 ### Kaggle Notebook For Main Steps: <a href = "https://www.kaggle.com/code/muhammadehabmuhammad/heart-failure-prediction-streamlit-app" target="_blank" style = "color: tomato">Click Here To Visit Kaggle Notebbok</a>🥰📊
 
