@@ -4,7 +4,7 @@
 
 ### Web App Link: <a href = "https://modyehab810-customer-churn-forecasting.hf.space" style = "color: tomato">Click Here To Visit Plotly Dash Web App</a>🥰📊
 
-### Kaggle Notebook For Main Steps: <a href = "https://www.kaggle.com/code/muhammadehabmuhammad/heart-failure-prediction-streamlit-app" target="_blank" style = "color: tomato">Click Here To Visit Kaggle Notebbok</a>🥰📊
+### Kaggle Notebook For Main Steps: <a href = "https://www.kaggle.com/code/muhammadehabmuhammad/customer-churn-forecasting-dash-app" target="_blank" style = "color: tomato">Click Here To Visit Kaggle Notebbok</a>🥰📊
 
 <hr>
 
