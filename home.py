@@ -5,7 +5,6 @@ import plotly.express as px
 
 used_color = ["#ADA2FF", "#FCDDB0", "#FF9F9F", "#EDD2F3", "#7FE9DE", "#84DFFF"]
 
-
 # Custom function for chart layout
 def update_layout(fig, title_font_size=28, hover_font_size=16, hover_bgcolor="#111", showlegend=False):
     fig.update_layout(
